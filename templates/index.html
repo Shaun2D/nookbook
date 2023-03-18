@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/main.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNook</title>
+</head>
+        <body>
+          <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="/"><img src="/static/logo.png" width="60" height="60" alt=""></a>
+            <form action="{{ url_for('search') }}" method="GET">
+              <input type="text" name="query" placeholder="">
+            </form>
+          </nav>
+        
+          
+          
+         
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+         
+            <body>
+             <div class="container">
+  <div style="text-align: center;">
+    <h1>BookNook</h1>
+    <h2>Libros recomendados</h2>
+  </div>
+  <div class="book-container">
+    {% for book in recommended_books %}
+    <div class="book">
+      <img src="{{ url_for('static', filename=book.imagen) }}" alt="{{ book.titulo }}" class="book-image">
+      <h2>{{ book.titulo }}</h2>
+      <div class="review-container">
+        <h2>Escribe una reseña</h2>
+        <form method="POST" action="{{ url_for('submit_review') }}">
+          <input type="hidden" name="book_id" value="{{ book.id }}">
+          <label for="resena">Reseña:</label>
+          <textarea id="resena" name="resena" required></textarea>
+          <button type="submit">Enviar</button>
+          <br>
+          <p class="clasificacion">
+            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+            --><label for="radio1">★</label><!--
+            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+            --><label for="radio2">★</label><!--
+            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+            --><label for="radio3">★</label><!--
+            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+            --><label for="radio4">★</label><!--
+            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+            --><label for="radio5">★</label>
+          </p>
+        </form>
+        {% for review in book.reviews %}
+        <div class="review">
+          <p>{{ review.text }}</p>
+          <p>Rating: {{ review.rating }}</p>
+        </div>
+        {% endfor %}
+      </div>
+      <p>{{ book.descripcion }}</p>
+    </div>
+    

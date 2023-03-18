@@ -1,0 +1,27 @@
+<!-- home.html -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Resultados de la búsqueda</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Descripción</th>
+        <th>Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.titulo }}</td>
+          <td>{{ book.autor }}</td>
+          <td>{{ book.descripcion }}</td>
+          <td><img src="{{ book.imagen }}"></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,143 @@
+body {background: aliceblue;
+    }
+    body{
+        text-align:center;
+        background-color:#ffffff00;
+      }
+      input{
+        margin-top:280px;
+        border-radius:50%;
+        width:40px;
+        cursor:pointer;
+        height:40px;
+        background-color:rgba(255, 255, 255, 0);
+        outline:none;
+        background-image:url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-256.png");
+        background-size:30px;
+        background-position:center;
+        font-size:18px;
+        color:rgb(0, 0, 0);
+        background-repeat:no-repeat;
+        border:1px solid grey;
+        transition-property:width, border-radius, background-position, padding-left/*, transform*/;
+        transition-duration:0.5s;
+      }
+      input:focus{
+        /*transform:rotate(-360deg);*/
+        width:330px;
+        border-radius:5px;
+        cursor: default;
+        padding-left:40px;
+        padding-right:20px;
+        background-position:5px;
+      }
+    
+      
+      .nav {
+        background-color: #ffffff00;
+      }
+      label{ color:rgb(255, 255, 255);}
+      input[type = "radio"]{ display:none;}
+      .clasificacion{
+        direction: rtl;/* right to left */
+        unicode-bidi: bidi-override;/* bidi de bidireccional */
+    }
+    label:hover{color:orange;}
+    label:hover ~ label{color:orange;}
+    input[type = "radio"]:checked ~ label{color:orange;}
+    #form {
+      width: 250px;
+      margin: 0 auto;
+      height: 50px;
+    }
+    
+    #form p {
+      text-align: center;
+    }
+    
+    #form label {
+      font-size: 20px;
+    }
+    
+    input[type="radio"] {
+      display: none;
+    }
+    
+    label {
+      color: grey;
+    }
+    
+    .clasificacion {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+    }
+    
+    label:hover,
+    label:hover ~ label {
+      color: orange;
+    }
+    
+    input[type="radio"]:checked ~ label {
+      color: orange;
+    }
+
+    
+    body {
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .book {
+      width: 25%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    
+    .book-image {
+      width: 100%;
+      height: auto;
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    
+    .book h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .book p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    
+    .clasificacion {
+      display: inline-block;
+      font-size: 18px;
+    }
+    
+    .clasificacion input[type="radio"] {
+      display: none;
+    }
+    
+    .clasificacion label {
+      color: #727272;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    .clasificacion label:hover,
+    .clasificacion label:hover ~ label,
+    .clasificacion input[type="radio"]:checked ~ label {
+      color:orange;
+    }
+    

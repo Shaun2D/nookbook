@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if book %}
+    <h1>{{ book.titulo }}</h1>
+    <h2>de {{ book.autor }}</h2>
+    {% if book.descripcion %}
+      <p>{{ book.descripcion }}</p>
+    {% endif %}
+    {% if book.imagen %}
+      <img src="{{ book.imagen }}" alt="{{ book.titulo }}" />
+      
+    {% endif %}
+    {% if book.paginas %}
+      <p>Páginas: {{ book.paginas }}</p>
+    {% endif %}
+    {% if book.editorial %}
+      <p>Editorial: {{ book.editorial }}</p>
+    {% endif %}
+    {% if book.fecha_publicacion %}
+      <p>Fecha de publicación: {{ book.fecha_publicacion }}</p>
+    {% endif %}
+    {% if book.categoria %}
+      <p>Categoría: {{ book.categoria }}</p>
+    {% endif %}
+    {% if book.ratings_count %}
+      <p>Calificaciones: {{ book.ratings_count }}</p>
+    {% endif %}
+    {% if book.average_rating %}
+      <p>Calificación promedio: {{ book.average_rating }}</p>
+    {% endif %}
+  {% else %}
+    <p>No se encontraron resultados para tu búsqueda</p>
+  {% endif %}
+{% endblock %}
